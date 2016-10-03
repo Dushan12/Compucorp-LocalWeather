@@ -1,0 +1,12 @@
+doctype html
+html
+  head
+    meta(content='text/html;charset=utf-8', http-equiv='Content-Type')
+    meta(content='utf-8', http-equiv='encoding')
+    link(rel='shortcut icon', href='favicon.ico', type='image/x-icon')
+    link(rel='icon', type='image/png', href='favicon.png')
+    title Cognism
+    != renderStyles()
+    != renderJs()
+  body(ng-app='bfMainModule', ng-controller='bfMainController')
+    div(style='height: 100%;', ng-view='')

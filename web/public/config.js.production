@@ -1,0 +1,132 @@
+var COGNISMAPP = {
+	version : function() { return "0.0.3.45"; },	
+	httpTimeout : function() { return 30000; },
+	debugmode : function() { return false; },
+	menumode: function() { return "PRERELEASE"; }, // PRERELEASE, NOVELTY, PRODUCTION
+	routerMode: function() { return "PRERELEASE" }, // PRERELEASE, NOVELTY, PRODUCTION
+	config : {		
+		timeserverurl : function() {
+			return '/utility/server_datetime';
+		},	
+		htmlStreamToImage: function() {
+			return '/utility/html_stream_to_image';
+		},
+		authenticationdomain: function() {
+			return 'http://www.cognism.com';
+		},
+		oauthprovider :function() {
+			return '/v1/authentication/check_token';
+		},
+		oauthremotelogin :function() {
+			return '/v1/authentication/remote_login';
+		},
+		redirectUrl: function() {
+			return this.authenticationdomain();
+		},
+		authenticationlogin: function() {
+			return this.authenticationdomain() + '/Home/Cognism';
+		},
+		nouserimage : function() {
+			return 'images/nouser.png';
+		},
+		logouturl :function() {
+			return '/v1/authentication/logout';
+		},
+		userconfigendpoint: function() {
+			return '/v1/config/:id'; //"http://52.0.169.151:3101/v1/config/:id";
+		},
+		versionServer: function() {			
+			return '/utility/version';		
+		},
+		supportMailTo: function() {
+			return 'gajikdushan@gmail.com';
+		},
+		mailProvider: function() {
+			return '/v1/mailserver';
+		},
+		pipelineEndpoint: function() {
+			return '/v1/api/pipeline/:id';
+		},
+		listEndpoint: function() {
+			return '/v1/api/pipeline/:id/lists/:idList';
+		},
+		intelligenceEndpoint: function() {
+			return '/v1/api/pipeline/:id/intelligence/:idIntelligence';
+		},
+		intelligenceDeleteEndpoint: function() {
+			return '/v1/api/pipeline/:id/intelligence/:idIntelligence/delete';
+		},
+		cardEndpoint: function() {
+			return '/v1/api/pipeline/:id/cards/:idCard';
+		},
+		cardDeleteEndpoint: function() {
+			return '/v1/api/pipeline/:id/cards/:idCard/delete';
+		},
+		getUserConfigEndpoint: function() {
+			return '/v1/api/users/configuration';
+		},
+		saveUserConfigEndpoint: function() {
+			return '/v1/api/users/configuration/pipeline/:id/star';
+		},
+		deleteUserConfigEndpoint: function() {
+			return '/v1/api/users/configuration/pipeline/:id/unstar';
+		},
+		leadListEndpoint: function() {
+			return '/v1/api/leads/:id';
+		},
+		leadListDeleteEndpoint: function() {
+			return '/v1/api/leads/:id/delete';
+		},
+		websocketUrl: function(token) {
+			return 'ws://pipeline.cognism.io/websocket?token=' + token;
+		},
+		jobChangeEndpoint: function() {
+			return '/v1/api/companies/jobchanges/:name';
+		},
+		companyChangeEndPoint: function() {
+			return '/v1/api/new_companies';
+		},
+		quoteEndpoint: function() {
+			return '/v1/api/quotations';
+		},
+		eventReportEntpoint: function() {
+			return '/api/v1/events/search';	
+		},
+		personDetailsEndpoint: function() {
+			return '/api/v1/person_details_endpoint/contact';
+		},
+		triggerStreamEventTypesEndpoint: function() {
+			return '/v1/events/stream/types';
+		},
+		triggerStreamEndpoint: function() {
+			return '/api/v1/events/stream';
+		},
+		triggerStreamWebSocketEndpoint: function(token) {
+			return 'ws://ws.cognism.io/websocket?token=' + token;
+		},
+		triggerStreamCompanyEndpoint: function() {
+			return '/api/v1/events/stream/org/:org';
+		},
+		countryListEndpoint: function() {
+			return '/v1/geotarget/countries';
+		},
+		currencyListEndpoint: function() {
+			return '/data/currencies.json';
+		},
+		stateListEndpoint: function() {
+			return '/v1/geotarget/search/states/:name';
+		},
+		cityListEndpoint: function() {
+			return '/v1/geotarget/search/cities/:name';
+		},
+		companyListForMonitorsEndpoint: function() {
+			return '/v1/organizations/search/:name';
+		},
+		jobTitleEndpoint: function() {
+			return '/v1/titles/search/:name';
+		},
+		applicationSourceName: function() {
+			return "LeadExtractorApplication";
+		}
+	}
+}
