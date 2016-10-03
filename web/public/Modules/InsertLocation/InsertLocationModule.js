@@ -1,7 +1,7 @@
 (function() {
 
-	var app = angular.module("CurrentLocationModule", ['DatabaseFactoryModule', 'ngResource']);
-	app.controller('CurrentLocationController', ['$scope', 'Geolocation', 'WeatherData', function($scope, Geolocation, WeatherData)
+	var app = angular.module("InsertLocationModule", ['DatabaseFactoryModule', 'ngResource']);
+	app.controller('InsertLocationController', ['$scope', 'Geolocation', 'WeatherData', function($scope, Geolocation, WeatherData)
 	{
 			
 			$scope.GetGeolocation=function() {

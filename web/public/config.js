@@ -4,8 +4,8 @@ var COGNISMAPP = {
 	debugmode : function() { return false; },
 	organisation: function() { return 'Cognism' },
 	config : {		
-		emailDataEndpoint: function() {
-			return "/api/v1/enrichment/email/:id"
+		weatherEndpoint: function() {
+			return "http://api.openweathermap.org/data/2.5/weather"
 		}
 	}
 }

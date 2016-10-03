@@ -10,8 +10,7 @@ module.exports = function(assets) {
 	//assets.addCssUrl("https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css")
 	assets.addCss(__dirname + '/public/css/libs/font-awesome.min.css')
 	assets.addCss(__dirname + '/public/css/libs/jquery-ui.css')
-
-    assets.addCss(__dirname + '/public/css/Progress/progress.css')    
+ 
     assets.addCss(__dirname + '/public/css/style.css')
 
 	assets.addJs(__dirname + '/public/js/libs/jquery.js')
