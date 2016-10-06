@@ -6,6 +6,9 @@ var COGNISMAPP = {
 	config : {		
 		weatherEndpoint: function() {
 			return "http://api.openweathermap.org/data/2.5/weather"
+		},
+		geocodeEndpoint: function() {
+			return "https://maps.googleapis.com/maps/api/geocode/json"
 		}
 	}
 }

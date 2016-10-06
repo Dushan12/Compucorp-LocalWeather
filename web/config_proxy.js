@@ -11,6 +11,9 @@ var CONFIG_PROXY = {
 		},
 		emailDataEndpoint: function() {
 			return "http://graph.cognism.io/api/v1/enrichment/email"
+		},
+		geocodeEndpoint: function(address, key) {
+			return "https://maps.googleapis.com/maps/api/geocode/json?address=" + address + "&key=" + key
 		}
 	}
 }

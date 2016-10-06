@@ -1,3 +1,8 @@
 <div>
-	
+	  <input ng-model="postcode" />
+	  <input ng-model="city" />
+	  <a ng-click="getWeather()">Load Weather Data</a>
+
+	  <span>{{ weather.humidity }}</span>
+	  <span>{{ weather.pressure }}</span>
 </div>

@@ -1,6 +1,6 @@
 (function() {
 
-    var app = angular.module('bfMainModule', ['ngRoute','LandingPageModule', 'CurrentLocationModule']);
+    var app = angular.module('bfMainModule', ['ngRoute','LandingPageModule', 'CurrentLocationModule', 'InsertLocationModule']);
 
     app.config(['$routeProvider', '$compileProvider', '$httpProvider', 
         function ($routeProvider, $compileProvider, $httpProvider) {
@@ -19,6 +19,11 @@
                 .when('/', {
                     controller: 'LandingPageController',
                     templateUrl: 'Modules/LandingPage/LandingPageTemplate.html',
+                    reloadOnSearch: false
+                })
+                .when('/input', {
+                    controller: 'InsertLocationController',
+                    templateUrl: 'Modules/InsertLocation/InsertLocationTemplate.html',
                     reloadOnSearch: false
                 })
                 .otherwise({ redirectTo: '/' });

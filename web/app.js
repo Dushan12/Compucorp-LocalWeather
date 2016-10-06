@@ -53,10 +53,9 @@ app.use('/utility/server_datetime', function(req, res) {
 });
 
 
-app.use('/api/v1/enrichment/email/:id', function(req, res) {
-  var url = configuration.CONFIG_PROXY.config.emailDataEndpoint() + "/" + req.params.id
+app.use('/api/v1/geocode', function(req, res) {
+  var url = configuration.CONFIG_PROXY.config.geocodeEndpoint(req.query.address, req.query.key)  
   console.log(url)
-
   proxyServer.proxy(url, req, res);
 });
 

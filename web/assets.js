@@ -39,6 +39,8 @@ module.exports = function(assets) {
 	assets.addJs(__dirname + '/public/Modules/Utilities/UtilitiesModule.js')
 	assets.addJs(__dirname + '/public/Modules/LandingPage/LandingPageModule.js')
 	assets.addJs(__dirname + '/public/Modules/CurrentLocation/CurrentLocationModule.js')
+	assets.addJs(__dirname + '/public/Modules/InsertLocation/InsertLocationModule.js')
+	assets.addJs(__dirname + '/public/Modules/WeatherResult/WeatherResult.js')
 	
 
 };

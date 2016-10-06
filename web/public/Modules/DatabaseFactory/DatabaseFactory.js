@@ -32,4 +32,15 @@
 		//http://api.openweathermap.org/data/2.5/weather?lat=41.997346&lon=21.427996&APPID=be387e1d2d78b173ca0835a104bc614e
 	}])
 
+	databaseModule.factory('Geocode', ['$resource', function($resource) {
+		return $resource(COGNISMAPP.config.geocodeEndpoint(),
+			{address: "@_address", key: "@_key"},
+			{
+				get: {
+					method: 'GET'
+				}			
+			});
+		//https://maps.googleapis.com/maps/api/geocode/json?address=1000,%20Skopje&key=AIzaSyCEPlC_soXCV0G42S4rXeok8ItrDpNmNnE
+	}])
+
 }());
