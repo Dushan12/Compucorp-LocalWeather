@@ -1,6 +1,6 @@
 (function() {
 
-    var app = angular.module('bfMainModule', ['ngRoute','LandingPageModule', 'CurrentLocationModule', 'InsertLocationModule']);
+    var app = angular.module('bfMainModule', ['ngRoute','LandingPageModule', 'WeatherModule', 'ui-notification']);
 
     app.config(['$routeProvider', '$compileProvider', '$httpProvider', 
         function ($routeProvider, $compileProvider, $httpProvider) {
@@ -13,7 +13,7 @@
             $routeProvider            
                 .when('/coordinates', {
                     controller: 'CurrentLocationController',
-                    templateUrl: 'Modules/CurrentLocation/CurrentLocationTemplate.html',
+                    templateUrl: 'Modules/WeatherModule/CurrentLocation/CurrentLocationTemplate.html',
                     reloadOnSearch: false
                 })
                 .when('/', {
@@ -23,11 +23,24 @@
                 })
                 .when('/input', {
                     controller: 'InsertLocationController',
-                    templateUrl: 'Modules/InsertLocation/InsertLocationTemplate.html',
+                    templateUrl: 'Modules/WeatherModule/InsertLocation/InsertLocationTemplate.html',
                     reloadOnSearch: false
                 })
                 .otherwise({ redirectTo: '/' });
     }]);
+
+    app.config(['NotificationProvider', function(NotificationProvider) {
+        NotificationProvider.setOptions({
+            delay: 10000,
+            startTop: 20,
+            startRight: 10,
+            verticalSpacing: 20,
+            horizontalSpacing: 20,
+            positionX: 'left',
+            positionY: 'bottom'
+        });
+    }]);
+
 
     app.run(['$rootScope', function($rootScope) {
         $rootScope.$on('$routeChangeSuccess', function (event, toState, toParams) {

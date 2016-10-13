@@ -1,0 +1,16 @@
+<div>
+	<a class="btn" ng-href="#/coordinates" >Get local weather using courrent location?</a>
+	<br />
+
+	  <input ng-model="postcode" />
+	  <input ng-model="city" />
+	  <input ng-model="state" />
+	  <a class="btn btn-primary" ng-click="getWeather()">Load Weather Data</a>
+	  <div class="row">
+	  	<div class="col-lg-6">
+	  		<metric-weather-data ng-if="weather" weather-data="weather"></metric-weather-data>		
+	  	</div>
+	  </div>
+	  
+
+</div>

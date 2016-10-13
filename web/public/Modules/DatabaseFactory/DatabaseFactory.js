@@ -23,7 +23,7 @@
 
 	databaseModule.factory('WeatherData', ['$resource', function($resource) {
 		return $resource(COGNISMAPP.config.weatherEndpoint(),
-			{lon: '@_lon', lat: '@_lat', key:'@_key'},
+			{lon: '@_lon', lat: '@_lat', key:'@_key', units: "@_units"}, //&units=metric
 			{
 				get: {
 					method: 'GET'

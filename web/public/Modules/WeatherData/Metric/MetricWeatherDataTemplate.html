@@ -1,0 +1,163 @@
+
+
+<div class="col-lg-12 bt-table">
+
+Weather in {{ weatherData.name}} ( {{ weatherData.coord.lat }} , {{weatherData.coord.lon}} ). <br />
+The sun will rise in {{ weatherData.sys.sunrise | date:'HH:mm:ss' }} and will set in {{ weatherData.sys.sunset | date:'HH:mm:ss' }}.
+
+
+	<div class="row bt-row">	
+	<div class="col-lg-4 bt-cell">
+		City Name
+	</div>
+	<div class="col-lg-8 bt-cell">
+		{{ weatherData.name }}
+	</div>
+	</div>
+
+	<div class="row bt-row">
+	<div class="col-lg-4 bt-cell">
+		Coordinates
+	</div>	
+	<div class="col-lg-8 bt-cell">
+		<div class="col-lg-12 bt-table">
+			<div class="row bt-row">
+				<div class="col-lg-6 bt-cell">Lat {{ weatherData.coord.lat }}</div>
+				<div class="col-lg-6 bt-cell">Long {{ weatherData.coord.lon }}</div>
+			</div>	
+		</div>
+	</div>
+	</div>
+
+	<div class="row bt-row">
+	<div class="col-lg-4 bt-cell">
+		Sunrise
+	</div>
+	<div class="col-lg-8 bt-cell">
+		{{ weatherData.sys.sunrise | date:'yyyy-MM-dd HH:mm:ss Z' }}
+	</div>
+	</div>
+
+	<div class="row bt-row">
+	<div class="col-lg-4 bt-cell">
+		Sunset
+	</div>
+	<div class="col-lg-8 bt-cell">
+		{{ weatherData.sys.sunset | date:'yyyy-MM-dd HH:mm:ss Z' }}
+	</div>
+	</div>
+
+	<div class="row bt-row">
+	<div class="col-lg-4 bt-cell">
+		Temperature
+	</div>
+	<div class="col-lg-8 bt-cell">
+		{{ weatherData.main.temp }}
+	</div>
+	</div>
+
+	<div class="row bt-row">
+	<div class="col-lg-4 bt-cell">
+		Humidity
+	</div>
+	<div class="col-lg-8 bt-cell">
+		{{ weatherData.main.humidity }}
+	</div>
+	</div>
+
+	<div class="row bt-row">
+	<div class="col-lg-4 bt-cell">
+		Max temperature
+	</div>
+	<div class="col-lg-8 bt-cell">
+		{{ weatherData.main.temp_max }}
+	</div>
+	</div>
+
+	<div class="row bt-row">
+	<div class="col-lg-4 bt-cell">
+		Min temperature
+	</div>
+	<div class="col-lg-8 bt-cell">
+		{{ weatherData.main.temp_min }}
+	</div>
+	</div>
+
+	<div class="row bt-row">
+	<div class="col-lg-4 bt-cell">
+		Pressure
+	</div>
+	<div class="col-lg-8 bt-cell">
+		{{ weatherData.main.pressure }}
+	</div>
+	</div>
+
+	<div class="row bt-row">
+	<div class="col-lg-4 bt-cell">
+		Sea level
+	</div>
+	<div class="col-lg-8 bt-cell">
+		{{ weatherData.main.sea_level }}
+	</div>
+	</div>
+
+	<div class="row bt-row">
+	<div class="col-lg-4">
+		Ground level
+	</div>
+	<div class="col-lg-8 bt-cell">
+		{{ weatherData.main.grnd_level }}
+	</div>
+	</div>
+
+	<div class="row bt-row">
+	<div class="col-lg-4 bt-cell">
+		Wind
+	</div>
+	<div class="col-lg-8 bt-cell bt-table">
+		<div class="col-lg-12 bt-table">
+			<div class="bt-row">
+				<div class="col-lg-4 bt-cell">
+					Speed
+				</div>
+				<div class="col-lg-8 bt-cell">
+					{{ weatherData.wind.speed }}
+				</div>
+				<div class="col-lg-4 bt-cell">
+					Degrees
+				</div>
+				<div class="col-lg-8 bt-cell">
+					{{ weatherData.wind.deg }}
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+
+	<div class="row bt-row">
+	<div class="col-lg-4 bt-cell">
+		Clouds
+	</div>
+	<div class="col-lg-8 bt-cell">
+		{{ weatherData.clouds.all }}
+	</div>
+	</div>
+
+	<div class="row bt-row">
+	<div class="col-lg-4 bt-cell">
+		Rain
+	</div>
+	<div class="col-lg-8 bt-cell">
+		{{ weatherData.rain["3h"] }}
+	</div>
+	</div>
+
+	<div class="row bt-row">
+	<div class="col-lg-4 bt-cell">
+		Snow
+	</div>
+	<div class="col-lg-8 bt-cell">
+		{{ weatherData.snow }}
+	</div>
+	</div>
+</div>
