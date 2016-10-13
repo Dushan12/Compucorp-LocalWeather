@@ -1,6 +1,6 @@
 (function() {
 
-	var databaseModule = angular.module('DatabaseFactoryModule', ['LocalStorageModule', 'ngResource']);
+	var databaseModule = angular.module('DatabaseFactoryModule', ['ngResource']);
 
 	databaseModule.service('Geolocation', ['$q', function ($q) {
 		this.GetLocation = function () {

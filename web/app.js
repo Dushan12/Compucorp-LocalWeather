@@ -7,7 +7,6 @@ var bodyParser = require('body-parser');
 var request = require('request');
 
 var configuration = require('./config_proxy.js');
-var proxyServer = require('./custom_modules/proxy.js');
 
 var app = express();
 
@@ -52,12 +51,6 @@ app.use('/utility/server_datetime', function(req, res) {
     res.json(date + "");  
 });
 
-
-app.use('/api/v1/geocode', function(req, res) {
-  var url = configuration.CONFIG_PROXY.config.geocodeEndpoint(req.query.address, req.query.key)  
-  console.log(url)
-  proxyServer.proxy(url, req, res);
-});
 
 app.use(function(req, res, next) {
     var err = new Error('Not Found');

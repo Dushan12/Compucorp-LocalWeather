@@ -1,4 +1,4 @@
-(function() {
+
 
 	var app = angular.module("WeatherModule", ['DatabaseFactoryModule', 'ngResource', 'MetricWeatherDataModule', 'ui-notification', 'WeatherModule']);
 	
@@ -17,4 +17,3 @@
 	}]);
 
 
-}());
