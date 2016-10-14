@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 var request = require('request');
 
 var configuration = require('./config_proxy.js');
+var proxyServer = require('./custom_modules/proxy.js');
 
 var app = express();
 
@@ -21,7 +22,7 @@ var assets = require('./assets');
 app.set('view engine', 'jade');
 
 // uncomment after placing your favicon in /public
-app.use(favicon(__dirname + '/public/favicon.ico'));
+//app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'));
 app.use(bodyParser.json({ limit: '2mb' }));
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -40,6 +41,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', function (req, res) {
   res.render('index');
+});
+
+app.use('/v1/weather/location', function(req, res) {
+  var lat = req.query.lat;
+  var lon = req.query.lon;
+  var appid = req.query.APPID; 
+  var metric = req.query.metric; 
+  var url = configuration.CONFIG_PROXY.config.weatherDataUrl() + "?lat="+ lat+ "&lon="+lon+ "&APPID="+appid+ "&metric="+metric
+  proxyServer.proxy(url, req, res);
 });
 
 app.use('/utility/version', function(req, res) {  

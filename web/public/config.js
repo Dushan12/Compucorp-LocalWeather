@@ -5,7 +5,7 @@ var COGNISMAPP = {
 	organisation: function() { return 'Cognism' },
 	config : {		
 		weatherEndpoint: function() {
-			return "http://api.openweathermap.org/data/2.5/weather"
+			return "/v1/weather/location"
 		},
 		geocodeEndpoint: function() {
 			return "https://maps.googleapis.com/maps/api/geocode/json"

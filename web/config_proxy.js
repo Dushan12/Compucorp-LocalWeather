@@ -14,6 +14,9 @@ var CONFIG_PROXY = {
 		},
 		geocodeEndpoint: function(address, key) {
 			return "https://maps.googleapis.com/maps/api/geocode/json?address=" + address + "&key=" + key
+		},
+		weatherDataUrl: function() {
+			return "http://api.openweathermap.org/data/2.5/weather"
 		}
 	}
 }
