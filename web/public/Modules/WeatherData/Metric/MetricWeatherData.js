@@ -15,8 +15,7 @@
 		    },
 		    templateUrl: 'Modules/WeatherData/Metric/MetricWeatherDataTemplate.html',
 		    link: function(scope, element, attrs) {
-      			//scope.weatherData =
-      			console.log(attrs);      			
+		    	
     		}
 		};
 	})

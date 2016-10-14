@@ -18,8 +18,8 @@
 				$location.path('/input')
 			})				
 		}
-
-		$scope.GetWeatherForGeolocation();
+ 		
+ 		$scope.GetWeatherForGeolocation();
 
 	}]);
 

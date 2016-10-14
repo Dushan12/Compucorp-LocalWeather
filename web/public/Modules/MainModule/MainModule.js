@@ -8,7 +8,6 @@
         $compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|local|data):/);    
         $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|chrome-extension|data):/);
 
-        $httpProvider.interceptors.push('responseObserver');
         
             $routeProvider            
                 .when('/coordinates', {
@@ -41,44 +40,8 @@
         });
     }]);
 
-
-    app.run(['$rootScope', function($rootScope) {
-        $rootScope.$on('$routeChangeSuccess', function (event, toState, toParams) {
-            if(toParams)
-                $rootScope.$broadcast('URL_PARAMETERS', toParams.params);
-        });
-    }]);
-
     app.controller('bfMainController', ['$rootScope', '$location', '$http', '$scope', 
         function($rootScope, $location, $http, $scope) {      
-        
-        $rootScope.appEnable = false;
-
-        $rootScope.$on('URL_PARAMETERS', function(event, parameters) {
-            $location.search(parameters);
-        });  
-    }]);
-
-    app.factory('responseObserver', ['$q', '$window',function($q, $window) {
-        return {
-            'request': function(conf) {
-                console.log('Request made');
-                return conf;
-            },
-            'responseError': function(errorResponse) {
-                switch (errorResponse.status) {
-                    case 403: {
-                        $window.location = COGNISMAPP.config.authenticationlogin();
-                        break;
-                    }
-                    case 401: {
-                        $window.location = COGNISMAPP.config.authenticationlogin();
-                        break;
-                    }
-                }
-                return $q.reject(errorResponse);
-            }
-        };
     }]);
 
 }());
