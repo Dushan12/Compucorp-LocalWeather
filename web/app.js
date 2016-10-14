@@ -52,6 +52,13 @@ app.use('/v1/weather/location', function(req, res) {
   proxyServer.proxy(url, req, res);
 });
 
+app.use('/v1/geocode', function(req, res) {
+  var address = req.query.address;
+  var key = req.query.key;
+  var url = configuration.CONFIG_PROXY.config.geocodeEndpoint() + "?address="+ address+ "&key="+key
+  proxyServer.proxy(url, req, res);
+});
+
 app.use('/utility/version', function(req, res) {  
     res.end("0.0.3.17");
 });

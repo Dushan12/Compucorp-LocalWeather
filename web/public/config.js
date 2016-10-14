@@ -8,7 +8,7 @@ var COGNISMAPP = {
 			return "/v1/weather/location"
 		},
 		geocodeEndpoint: function() {
-			return "https://maps.googleapis.com/maps/api/geocode/json"
+			return "/v1/geocode"
 		}
 	}
 }

@@ -4,16 +4,16 @@ var CONFIG_PROXY = {
 	debugmode : function() { return false; },
 	config : {	
 		applicationPort: function() {
-			return 443;
+			return 80;
 		},
 		applicationSecureProtocol: function() {
-			return true;
+			return false;
 		},
 		emailDataEndpoint: function() {
 			return "http://graph.cognism.io/api/v1/enrichment/email"
 		},
 		geocodeEndpoint: function(address, key) {
-			return "https://maps.googleapis.com/maps/api/geocode/json?address=" + address + "&key=" + key
+			return "https://maps.googleapis.com/maps/api/geocode/json"
 		},
 		weatherDataUrl: function() {
 			return "http://api.openweathermap.org/data/2.5/weather"
