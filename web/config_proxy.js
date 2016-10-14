@@ -4,10 +4,10 @@ var CONFIG_PROXY = {
 	debugmode : function() { return false; },
 	config : {	
 		applicationPort: function() {
-			return 80;
+			return 443;
 		},
 		applicationSecureProtocol: function() {
-			return false;
+			return true;
 		},
 		emailDataEndpoint: function() {
 			return "http://graph.cognism.io/api/v1/enrichment/email"
